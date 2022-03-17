@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+podman container kill mariadb
+podman container rm mariadb
+podman build  --file=./mysql.dockerfile --tag mariadb
+podman run --name mariadb --pod php0 --detach --tty --env-file=./.env mariadb
+# --volume /var/www/mariadb0:/var/lib/mysql:Z    --publish 3306:3306
