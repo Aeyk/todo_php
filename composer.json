@@ -1,0 +1,22 @@
+{
+    "name": "malik/todo",
+    "description": "A simple Todo app",
+    "type": "project",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    },
+    "license": "0BSD",
+    "autoload": {
+        "psr-4": {
+            "Malik\\Todo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Malik Kennedy",
+            "email": "mksybr@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

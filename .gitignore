@@ -1,2 +1,4 @@
 /.env
 /config/.my.cnf
+
+/vendor/
