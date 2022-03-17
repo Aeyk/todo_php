@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+## create pod
+podman pod kill php0
+podman pod rm php0
+podman pod create --name php0 --publish 1080:1080 --publish 3306:3306
+
+## create database
+podman container kill mariadb
+podman container rm mariadb
+podman run --name mariadb --pod php0 --detach --tty --env-file=./.env docker.io/library/mariadb:latest
+podman run --env-file=./.env mariadb mysql --port=3306  --user=root -e "CREATE DATABASE IF NOT EXISTS todo_php;"
+	
+## create nginx load balancer
+podman container kill php-nginx
+podman container rm php-nginx
+podman build -f ./Dockerfile -t php-nginx .
+podman run --pod php0 --name php-nginx --tty --detach  php-nginx 
