@@ -1,0 +1,5 @@
+#!/bin/bash
+podman container kill php-nginx
+podman container rm php-nginx
+podman build -f ./Dockerfile -t php-nginx .
+podman run --pod php0 --name php-nginx --tty --detach  php-nginx 
