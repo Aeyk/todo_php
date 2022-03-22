@@ -16,26 +16,16 @@ jobs:
       - checkout
       - run:
           name: Install Composer
-          command: |
-            php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-            php -r "if (hash_file('SHA384', 'composer-setup.php') === trim(file_get_contents('https://composer.github.io/installer.sig'))) { echo 'Installer verified'; } else { echo 'Installer invalid'; unlink('composer-setup.php'); } echo PHP_EOL;"
-            php composer-setup.php
-            php -r "unlink('composer-setup.php');"
-            php composer.phar
-            php composer.phar install
+          command: ./.circleci/install_composer.sh
       - run:
           name: Display PHP information
-          command: |
-            php -v
-            php composer.json --version
-      - run:
+          command: ./.circleci/php_info.sh
+        - run:
           name: Install project dependencies
-          command: php composer.json install
+          command: ./.circleci/install_deps.sh
       - run:
           name: Run CS tests
-          command: |
-            vendor/bin/phpcs  --standard=./ruleset.xml ./src ./tests
+          command: ./.circleci/php_lint.sh
       - run:
           name: Run Unit tests
-          command:  |
-            vendor/bin/phpunit tests
+          command: ./.circleci/php_lint.sh
