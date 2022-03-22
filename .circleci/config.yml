@@ -31,7 +31,11 @@ jobs:
           command: php composer.json install
       - run:
           name: Run CS tests
-          command: ~/.composer/vendor/bin/phpcs ./src ./tests
+          command: |
+            composer global require squizlabs/php_codesniffer
+            ~/.composer/vendor/bin/phpcs ./src ./tests
       - run:
           name: Run Unit tests
-          command:  ~/.composer/vendor/bin/phpunit tests
+          command:  |
+            composer global require phpunit/phpunit
+            ~/.composer/vendor/bin/phpunit tests
