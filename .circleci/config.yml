@@ -34,8 +34,8 @@ jobs:
       - run:
           name: Run CS tests
           command: |
-            echo $PATH; pwd; ls # vendor/bin/phpcs ./src ./tests
+            vendor/bin/phpcs ./src ./tests
       - run:
           name: Run Unit tests
           command:  |
-            echo $PATH; pwd; ls # vendor/bin/phpunit tests
+            vendor/bin/phpunit tests
