@@ -20,7 +20,7 @@ jobs:
       - run:
           name: Display PHP information
           command: ./.circleci/php_info.sh
-        - run:
+      - run:
           name: Install project dependencies
           command: ./.circleci/install_deps.sh
       - run:
