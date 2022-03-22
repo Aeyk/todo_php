@@ -31,7 +31,7 @@ jobs:
           command: php composer.json install
       - run:
           name: Run CS tests
-          command: ./vendor/bin/phpcs ./src ./tests
+          command: ~/.composer/vendor/bin/phpcs ./src ./tests
       - run:
           name: Run Unit tests
-          command: ./vendor/bin/phpunit tests
+          command:  ~/.composer/vendor/bin/phpunit tests
