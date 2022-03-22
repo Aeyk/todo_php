@@ -19,7 +19,7 @@ jobs:
           command: |
             php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
             php -r "if (hash_file('SHA384', 'composer-setup.php') === trim(file_get_contents('https://composer.github.io/installer.sig'))) { echo 'Installer verified'; } else { echo 'Installer invalid'; unlink('composer-setup.php'); } echo PHP_EOL;"
-            php composer-setup.php
+            php composer-setup.php --install-dir=bin --filename=composer
             php -r "unlink('composer-setup.php');"
       - run:
           name: Display PHP information
@@ -33,9 +33,8 @@ jobs:
           name: Run CS tests
           command: |
             composer global require squizlabs/php_codesniffer
-            ~/.composer/vendor/bin/phpcs ./src ./tests
+            vendor/bin/phpcs ./src ./tests
       - run:
           name: Run Unit tests
           command:  |
-            composer global require phpunit/phpunit
-            ~/.composer/vendor/bin/phpunit tests
+            vendor/bin/phpunit tests
