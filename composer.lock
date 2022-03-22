@@ -4,8 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "829c9de4b9e8b767c4c821b53fb51fe9",
-    "packages": [
+    "content-hash": "027b8d5f8da353ddd59407627b540458",
+    "packages": [],
+    "packages-dev": [
         {
             "name": "doctrine/instantiator",
             "version": "1.5.x-dev",
@@ -547,12 +548,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "9a61ec72f0d2b0b1d3f7431f90ab936b9c0e2062"
+                "reference": "c46105173d72d632e3829add9f50aded1e702572"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/9a61ec72f0d2b0b1d3f7431f90ab936b9c0e2062",
-                "reference": "9a61ec72f0d2b0b1d3f7431f90ab936b9c0e2062",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/c46105173d72d632e3829add9f50aded1e702572",
+                "reference": "c46105173d72d632e3829add9f50aded1e702572",
                 "shasum": ""
             },
             "require": {
@@ -616,7 +617,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-03-08T06:18:06+00:00"
+            "time": "2022-03-21T05:59:05+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -865,12 +866,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "5fc83848551ec5fc0086af8024efc9c42fcde559"
+                "reference": "1ef13ce11e983ac13120f330f6083391b3785f41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/5fc83848551ec5fc0086af8024efc9c42fcde559",
-                "reference": "5fc83848551ec5fc0086af8024efc9c42fcde559",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1ef13ce11e983ac13120f330f6083391b3785f41",
+                "reference": "1ef13ce11e983ac13120f330f6083391b3785f41",
                 "shasum": ""
             },
             "require": {
@@ -960,7 +961,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-03-15T10:09:15+00:00"
+            "time": "2022-03-21T06:04:44+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -1927,6 +1928,63 @@
             "time": "2020-09-28T06:39:44+00:00"
         },
         {
+            "name": "squizlabs/php_codesniffer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+                "reference": "1900302971fb7ebd7a15ff4b69e825fa59ed0ae4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/1900302971fb7ebd7a15ff4b69e825fa59ed0ae4",
+                "reference": "1900302971fb7ebd7a15ff4b69e825fa59ed0ae4",
+                "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
+                "ext-tokenizer": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
+            },
+            "default-branch": true,
+            "bin": [
+                "bin/phpcs",
+                "bin/phpcbf"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Sherwood",
+                    "role": "lead"
+                }
+            ],
+            "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
+            "homepage": "https://github.com/squizlabs/PHP_CodeSniffer",
+            "keywords": [
+                "phpcs",
+                "standards"
+            ],
+            "support": {
+                "issues": "https://github.com/squizlabs/PHP_CodeSniffer/issues",
+                "source": "https://github.com/squizlabs/PHP_CodeSniffer",
+                "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
+            },
+            "time": "2022-03-18T03:28:23+00:00"
+        },
+        {
             "name": "symfony/polyfill-ctype",
             "version": "v1.25.0",
             "source": {
@@ -2118,7 +2176,6 @@
             "time": "2021-06-19T13:45:26+00:00"
         }
     ],
-    "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": [],
