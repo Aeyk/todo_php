@@ -14,6 +14,7 @@ jobs:
           name: Install PHP extensions
           command: docker-php-ext-install pdo
       - checkout
+      - run: chmod a+x ./.circleci/*.sh
       - run:
           name: Install Composer
           command: .circleci/install_composer.sh
