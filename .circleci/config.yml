@@ -34,7 +34,7 @@ jobs:
       - run:
           name: Run CS tests
           command: |
-            vendor/bin/phpcs --standard=PSR2 ./src ./tests
+            vendor/bin/phpcs  --standard=./ruleset.xml ./src ./tests
       - run:
           name: Run Unit tests
           command:  |
