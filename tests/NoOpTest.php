@@ -7,7 +7,7 @@ namespace com\mksybr;
 use PHPUnit\Framework\TestCase;
 
 final class NoOpTest extends TestCase {
-    function __construct() {
+    public function __construct() {
         super();
     }
 }
