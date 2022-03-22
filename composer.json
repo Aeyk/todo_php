@@ -9,9 +9,7 @@
     },
     "license": "0BSD",
     "autoload": {
-        "psr-4": {
-            "Malik\\Todo\\": "src/"
-        }
+      "classmap": ["src/"]
     },
     "authors": [
         {
