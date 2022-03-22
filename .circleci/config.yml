@@ -16,16 +16,16 @@ jobs:
       - checkout
       - run:
           name: Install Composer
-          command: ./.circleci/install_composer.sh
+          command: .circleci/install_composer.sh
       - run:
           name: Display PHP information
-          command: ./.circleci/php_info.sh
+          command: .circleci/php_info.sh
       - run:
           name: Install project dependencies
-          command: ./.circleci/install_deps.sh
+          command: .circleci/install_deps.sh
       - run:
           name: Run CS tests
-          command: ./.circleci/php_lint.sh
+          command: .circleci/php_lint.sh
       - run:
           name: Run Unit tests
-          command: ./.circleci/php_lint.sh
+          command: .circleci/php_lint.sh
