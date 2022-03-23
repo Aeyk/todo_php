@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 class TodoTest extends TestCase {
     protected function setUp(): void {}
     protected function setDown(): void {}
+
     public function testTodoListCanBeCreated(): TodoList {
         $todo = new TodoList();
         $this->assertNotNull($todo);
@@ -17,5 +18,6 @@ class TodoTest extends TestCase {
     /** @depends testTodoListCanBeCreated */
     public function testTodoItemCanBeAppendedToTodoList(TodoList $todo): void {
         $todo->addTodoItem([":content" => "Finish todo app"]);
+        $this->assertNotNull($todo);
     }
 }
