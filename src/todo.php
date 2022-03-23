@@ -9,12 +9,14 @@ class TodoList {
         $this->db = new \PDO('sqlite::memory:');
         $sql_init_file = "db/create_todo_list_tables.sql";
         $sql_init = file_get_contents($sql_init_file);
-        if(!$sql_init)
+        if(!$sql_init) {
             throw("Failed to open " . $sql_init_file);
-        else
+        } else {
             $this->db->exec($sql_init);
-        if(!$this->db->exec("INSERT INTO todo_list DEFAULT VALUES"))
-            throw("Failed to create new todo_list entry " . $sql_init_file);;
+        }
+        if(!$this->db->exec("INSERT INTO todo_list DEFAULT VALUES")) {
+            throw("Failed to create new todo_list entry " . $sql_init_file);
+        }
         $this->list_id = $this->db->lastInsertId();
         return $this->list_id;
     }
