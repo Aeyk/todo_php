@@ -1,0 +1,21 @@
+<?php
+
+declare(strict_types=1);
+
+namespace com\mksybr;
+
+use PHPUnit\Framework\TestCase;
+
+class TodoTest extends TestCase {
+    protected function setUp(): void {}
+    protected function setDown(): void {}
+    public function testTodoListCanBeCreated(): TodoList {
+        $todo = new TodoList();
+        $this->assertNotNull($todo);
+        return $todo;
+    }
+    /** @depends testTodoListCanBeCreated */
+    public function testTodoItemCanBeAppendedToTodoList(TodoList $todo): void {
+        $todo->addTodoItem([":content" => "Finish todo app"]);
+    }
+}
