@@ -3,5 +3,5 @@ if test -n "$CI" ; then
 		vendor/bin/phpcs -s --standard=./ruleset.xml ./src ./tests
 else
 		podman run -it --volume ./:/var/www/html php \
-					 vendor/bin/phpcs -s --standard=./ruleset.xml ./src ./tests
+					 vendor/bin/phpcbf -s --standard=./ruleset.xml ./src ./tests
 fi
