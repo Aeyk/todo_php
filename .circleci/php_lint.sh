@@ -1,3 +1,3 @@
 #!/bin/sh
 
-vendor/bin/phpcs -s --standard=./ruleset.xml ./src ./tests
+podman run -it --volume ./:/var/www/html php vendor/bin/phpcbf -s --standard=./ruleset.xml ./src ./tests
