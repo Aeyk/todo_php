@@ -7,7 +7,8 @@ namespace com\mksybr;
 use PHPUnit\Framework\TestCase;
 
 class TodoTest extends TestCase {
-    protected function setUp(): void {}
+    protected function setUp(): void {
+    }
     protected function setDown(): void {}
 
     public function testTodoListCanBeCreated(): TodoList {
@@ -15,9 +16,13 @@ class TodoTest extends TestCase {
         $this->assertNotNull($todo);
         return $todo;
     }
-    /** @depends testTodoListCanBeCreated */
+  /** @depends testTodoListCanBeCreated */
     public function testTodoItemCanBeAppendedToTodoList(TodoList $todo): void {
         $todo->addTodoItem([":content" => "Finish todo app"]);
         $this->assertNotNull($todo);
+    }
+  /** @depends testTodoListCanBeCreated */
+    public function testTodoListCanBeShown(TodoList $todo): void {
+        $this->assertNotEquals(0, strcmp("", $todo->getTodoItems()));
     }
 }
