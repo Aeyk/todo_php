@@ -7,7 +7,7 @@ RUN mkdir -p /var/www/
 # COPY ./config/php-fpm.conf /etc/php/7.4/fpm/php-fpm.conf
 COPY ./config/nginx.conf /etc/nginx/nginx.conf
 COPY ./config/www.conf /etc/nginx/sites-available/default
-# COPY ./src/* /var/www/html/
+COPY ./src/* /var/www/html/
 RUN mkdir -p /run/php/
 RUN nginx -t
 COPY --chmod=0755 ./entrypoint.sh /etc/entrypoint
