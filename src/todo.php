@@ -27,4 +27,8 @@ class TodoList {
                                            ":todo_list_id" => $this->list_id]);
     return $this->list;
   }
+  public function getTodoItems() {
+    $stmt = $this->db->prepare("SELECT * FROM todo_item WHERE todo_list_id = :id");
+    return $stmt->execute(["id" => $this->list_id]);
+  }
 }
