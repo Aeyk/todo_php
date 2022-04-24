@@ -27,6 +27,7 @@ $app->get('/api/register', function (Request $request, Response $response, $args
         $result = ['status' => 'error', 'message' => 'invalid username or password for new user.'];
         $response->getBody()->write(json_encode($result));
         $response = $response->withHeader('Content-Type', 'application/json');
+        $response = $response->withStatus(403);
     }
 
     return $response;
