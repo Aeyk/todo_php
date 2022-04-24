@@ -8,6 +8,11 @@ RUN composer require slim/slim:"4.*"
 RUN composer require slim/psr7
 RUN composer update --no-scripts
 RUN composer dump-autoload
-RUN mkdir -p /var/www/vendor/
-COPY ./vendor/ /var/www/vendor
+RUN mkdir -p /var/www/vendor/ && mkdir -p /opt/app
+RUN a2enmod rewrite
+RUN a2enmod actions
+# COPY ./vendor/ /var/www/vendor/
+COPY ./config/.htaccess /var/www/html/.htaccess
+# COPY ./config/apache-default-site.conf /etc/apache2/enabled-sites/000-default.conf
 # VOLUME ./ /var/www/html/
+# RUN chown -R www-data:www-data /var/www/html
