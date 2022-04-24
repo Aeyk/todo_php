@@ -14,8 +14,21 @@ $app->get('/', function (Request $request, Response $response, $args) {
     return $response;
 });
 
-$app->get('/register', function (Request $request, Response $response, $args) {
-    $response->getBody()->write("REGISTER");
+$app->get('/api', function (Request $request, Response $response, $args) {
+    $response = $response->withJson(201);
+});
+
+$app->get('/api/register', function (Request $request, Response $response, $args) {
+    $result = [];
+    if(
+        !$_POST['username'] || !isset($_POST['username'])
+        && !$_POST['password'] || !isset($_POST['password'])
+    ) {
+        $result = ['status' => 'error', 'message' => 'invalid username or password for new user.'];
+        $response->getBody()->write(json_encode($result));
+        $response = $response->withHeader('Content-Type', 'application/json');
+    }
+
     return $response;
 });
 
